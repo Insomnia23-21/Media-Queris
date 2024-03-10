@@ -1,0 +1,244 @@
+body {
+  background-color: azure;
+  margin: 0;
+  padding: 0;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 80px calc(100vh - 80px -80px - 30px - 100px) 30px 100px;
+  grid-template-areas:
+    "sidebar"
+    "search"
+    "contenido"
+    "botonera"
+    "footer";
+}
+
+.sidebar {
+  display: flex;
+  background-color: rgb(12, 64, 221);
+  color: azure;
+}
+
+.sidebar .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar .menu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: azure;
+  margin-left: 15px;
+}
+
+.sidebar .hamburguesa {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  margin-left: calc(100vw - 170px);
+}
+
+.list {
+  display: none;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #cccccc;
+}
+
+.search .busqueda {
+  width: 90vw;
+  height: 30px;
+  margin-bottom: 10px;
+}
+
+.contenido {
+  height: calc(100vh - 80px - 80px - 100px);
+}
+
+.contenido .auto {
+  display: flex;
+  flex-direction: column;
+  border: #eeeeee solid;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  margin: 35px;
+  width: 80%;
+  height: 80%;
+}
+
+.auto-d {
+  display: none;
+  border: #eeeeee solid;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
+}
+
+.contenido .auto-d,
+.imagen-d,
+.model-d,
+.see-more-d {
+  display: none;
+}
+
+.auto-d .imagen-d img {
+  width: 200px;
+}
+
+.auto .imagen img {
+  width: 200px;
+}
+
+.auto .model {
+  color: rgb(41, 41, 41);
+}
+
+.auto-d .model-d {
+  color: rgb(41, 41, 41);
+}
+
+.auto .see-more {
+  color: azure;
+  border-radius: 10px;
+  background-color: rgb(24, 54, 224);
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  width: 80px;
+}
+
+.auto-d .see-more-d {
+  color: azure;
+  border-radius: 10px;
+  background-color: rgb(24, 54, 224);
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  width: 80px;
+}
+
+.botonera {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.contenedor .footer {
+  background-color: rgb(15, 15, 189);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: azure;
+  margin-top: 50px;
+}
+.footer .media {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.footer .media-reservation {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+@media (min-width: 576px) {
+  .contenedor {
+    grid-template-columns: 200px calc(100vw - 200px);
+    grid-template-rows: 15vh calc(95vh - 15vh - 15vh) 15vh;
+    grid-template-areas:
+      "sidebar search"
+      "sidebar contenido"
+      "footer botonera";
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: calc(100vh - 100px);
+    margin: 0;
+  }
+
+  .sidebar .hamburguesa {
+    color: rgb(12, 64, 221);
+    margin-left: 0;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .list ul li {
+    list-style: none;
+    margin-top: 10px;
+  }
+
+  .footer {
+    grid-area: footer;
+    height: 15vh;
+    margin: 0;
+    gap: 0;
+  }
+
+  .search .busqueda {
+    width: 80vw;
+    height: 30px;
+    margin-bottom: 10px;
+  }
+
+  .contenido {
+    grid-area: contenido;
+    display: flex;
+    margin-left: 20px;
+    padding: 20px;
+  }
+
+  .contenido .auto {
+    width: 200px;
+    height: 350px;
+    margin: 10px;
+    flex-direction: column;
+  }
+
+  .contenido .auto-d {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 350px;
+    margin: 10px;
+  }
+
+  .auto-d .imagen-d,
+  .model-d,
+  .see-more-d {
+    display: flex;
+  }
+
+  .botonera {
+    grid-area: "botonera";
+    flex-direction: row;
+    width: 80px;
+    height: 30px;
+    margin-left: 565px;
+    margin-top: 90px;
+  }
+}
